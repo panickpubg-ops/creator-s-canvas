@@ -10,7 +10,7 @@ const YourWorldSection = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="bg-beige py-20 md:py-32 lg:py-40 overflow-hidden">
+    <section className="section-glow bg-beige py-20 md:py-32 lg:py-40 overflow-hidden">
       <div
         ref={ref}
         className={cn(

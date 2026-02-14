@@ -49,7 +49,7 @@ const CreatorsFansSection = () => {
             <p className="font-sans text-base text-primary-foreground/60 max-w-md mb-10 leading-relaxed">
               No algorithms deciding who sees your work. No middlemen taking your connection. Just you and the people who believe in what you make.
             </p>
-            <Button variant="outline" className="rounded-full px-8 py-5 text-sm font-sans font-semibold border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+            <Button className="rounded-full px-8 py-5 text-sm font-sans font-semibold bg-primary-foreground text-foreground hover:bg-primary-foreground/90">
               See how it works
             </Button>
           </div>

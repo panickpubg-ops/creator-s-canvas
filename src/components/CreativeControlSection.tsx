@@ -14,7 +14,7 @@ const CreativeControlSection = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="bg-cream py-20 md:py-32 lg:py-40 overflow-hidden">
+    <section className="section-glow bg-cream py-20 md:py-32 lg:py-40 overflow-hidden">
       <div
         ref={ref}
         className={cn(
@@ -108,7 +108,7 @@ const CreativeControlSection = () => {
             </div>
 
             <p className="font-sans text-base text-muted-foreground max-w-lg mt-10 leading-relaxed">
-              With Creatorly, you get complete control over everything — your content, your audience, your pricing, and your creative direction. No algorithms. No middlemen.
+              With Bakking, you get complete control over everything — your content, your audience, your pricing, and your creative direction. No algorithms. No middlemen.
             </p>
           </div>
         </div>

@@ -7,7 +7,7 @@ const Navbar = () => {
         <div className="flex items-center gap-8">
           <nav className="hidden md:flex items-center gap-6">
             <a href="#" className="text-sm font-sans font-medium text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-              Create on Creatorly
+              Create on Bakking
             </a>
             <a href="#" className="text-sm font-sans font-medium text-primary-foreground/80 hover:text-primary-foreground transition-colors">
               Explore
@@ -18,7 +18,7 @@ const Navbar = () => {
           </nav>
         </div>
         <span className="font-serif text-xl font-bold text-primary-foreground tracking-tight absolute left-1/2 -translate-x-1/2">
-          Creatorly
+          Bakking
         </span>
         <div className="flex items-center gap-3">
           <Button variant="ghost" size="sm" className="text-sm font-sans font-medium text-primary-foreground/80 hover:text-primary-foreground hover:bg-transparent">

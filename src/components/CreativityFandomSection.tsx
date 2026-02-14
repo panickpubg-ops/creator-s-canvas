@@ -8,7 +8,7 @@ const CreativityFandomSection = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="bg-cream py-20 md:py-32 lg:py-40 overflow-hidden">
+    <section className="section-glow bg-cream py-20 md:py-32 lg:py-40 overflow-hidden">
       <div
         ref={ref}
         className={cn(
@@ -46,7 +46,7 @@ const CreativityFandomSection = () => {
         <div className="grid grid-cols-12 gap-4 md:gap-8 items-start">
           <div className="col-span-12 md:col-span-6">
             <p className="font-sans text-base text-muted-foreground max-w-md leading-relaxed">
-              Creatorly is a membership platform that helps creators run a subscription service, build community, and earn a living from their creative work with their biggest fans.
+              Bakking is a membership platform that helps creators run a subscription service, build community, and earn a living from their creative work with their biggest fans.
             </p>
           </div>
           <div className="col-span-12 md:col-span-6 text-right">
