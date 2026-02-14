@@ -3,12 +3,14 @@ import { ChevronDown } from "lucide-react";
 import heroCollage1 from "@/assets/hero-collage-1.jpg";
 import heroCollage2 from "@/assets/hero-collage-2.jpg";
 import heroCollage3 from "@/assets/hero-collage-3.jpg";
+import { useParallax } from "@/hooks/useParallax";
 
 const rotatingWords = ["podcasts", "creativity", "music", "art", "writing"];
 
 const HeroSection = () => {
   const [wordIndex, setWordIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const { ref: parallaxRef, offset } = useParallax(0.4);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -22,19 +24,37 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative bg-dark min-h-screen overflow-hidden">
-      {/* Image collage grid */}
+    <section ref={parallaxRef} className="relative bg-dark min-h-screen overflow-hidden">
+      {/* Image collage grid with parallax */}
       <div className="absolute inset-0 grid grid-cols-3 gap-1 opacity-70">
         <div className="relative overflow-hidden">
-          <img src={heroCollage1} alt="Creator podcasting" className="w-full h-full object-cover grayscale" loading="eager" />
+          <img
+            src={heroCollage1}
+            alt="Creator podcasting"
+            className="w-full h-full object-cover grayscale transition-transform duration-100 ease-out"
+            style={{ transform: `translateY(${offset * 0.6}px) scale(1.1)` }}
+            loading="eager"
+          />
         </div>
         <div className="relative overflow-hidden flex flex-col gap-1">
           <div className="flex-1 overflow-hidden">
-            <img src={heroCollage2} alt="Artist creator" className="w-full h-full object-cover grayscale" loading="eager" />
+            <img
+              src={heroCollage2}
+              alt="Artist creator"
+              className="w-full h-full object-cover grayscale transition-transform duration-100 ease-out"
+              style={{ transform: `translateY(${offset * -0.4}px) scale(1.1)` }}
+              loading="eager"
+            />
           </div>
         </div>
         <div className="relative overflow-hidden">
-          <img src={heroCollage3} alt="Musician creator" className="w-full h-full object-cover" loading="eager" />
+          <img
+            src={heroCollage3}
+            alt="Musician creator"
+            className="w-full h-full object-cover transition-transform duration-100 ease-out"
+            style={{ transform: `translateY(${offset * 0.8}px) scale(1.1)` }}
+            loading="eager"
+          />
           <div className="absolute inset-0 flex items-start justify-end p-6">
             <div className="text-right">
               <p className="font-sans text-xs text-primary-foreground/60 max-w-[200px] leading-relaxed">

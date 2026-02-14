@@ -44,7 +44,7 @@ const PassionsBusinessSection = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="bg-cream py-20 md:py-32 lg:py-40 overflow-hidden">
+    <section className="section-glow bg-cream py-20 md:py-32 lg:py-40 overflow-hidden">
       <div
         ref={ref}
         className={cn(
@@ -67,7 +67,7 @@ const PassionsBusinessSection = () => {
           <div>
             <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-6">More ways to earn</h3>
             <p className="font-sans text-base text-muted-foreground leading-relaxed mb-8">
-              Whether it's monthly memberships, per-creation pledges, or one-time digital product sales — diversify your income streams and build sustainable revenue from your creative work.
+              Whether it's monthly memberships, per-creation pledges, or one-time digital product sales — diversify your income streams and build sustainable revenue on Bakking.
             </p>
 
             <div className="space-y-6 mb-10">

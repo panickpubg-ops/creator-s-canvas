@@ -196,6 +196,26 @@
     transform: translateY(-8px);
     box-shadow: 0 20px 40px -15px hsl(var(--foreground) / 0.15);
   }
+
+  /* Subtle background color shift for light sections */
+  .section-glow {
+    position: relative;
+    transition: background-color 1.5s ease;
+  }
+
+  .section-glow::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 2s ease;
+    pointer-events: none;
+    background: radial-gradient(ellipse 600px 400px at var(--mouse-x, 50%) var(--mouse-y, 50%), hsl(var(--accent-red) / 0.04), transparent 70%);
+  }
+
+  .section-glow:hover::before {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeUp {

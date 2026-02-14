@@ -26,7 +26,7 @@ const TestimonialSection = () => {
       >
         <div className="max-w-3xl">
           <p className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-primary-foreground leading-[1.2] mb-10 italic">
-            "Creatorly provides a space for artists to sustain ourselves,
+            "Bakking provides a space for artists to sustain ourselves,
             by connecting us directly to our own communities."
           </p>
           <p className="font-sans text-lg sm:text-xl font-bold text-primary-foreground tracking-widest uppercase">

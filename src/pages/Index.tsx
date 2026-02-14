@@ -5,6 +5,7 @@ import TestimonialSection from "@/components/TestimonialSection";
 import CreativeControlSection from "@/components/CreativeControlSection";
 import CreatorsFansSection from "@/components/CreatorsFansSection";
 import PassionsBusinessSection from "@/components/PassionsBusinessSection";
+import BentoShowcase from "@/components/BentoShowcase";
 import YourWorldSection from "@/components/YourWorldSection";
 import SignUpSection from "@/components/SignUpSection";
 import Footer from "@/components/Footer";
@@ -20,6 +21,7 @@ const Index = () => {
         <CreativeControlSection />
         <CreatorsFansSection />
         <PassionsBusinessSection />
+        <BentoShowcase />
         <YourWorldSection />
         <SignUpSection />
       </main>
