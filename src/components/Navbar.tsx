@@ -1,35 +1,31 @@
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 
 const Navbar = () => {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-cream/80 backdrop-blur-md border-b border-border/50">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent">
       <div className="container max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <div className="flex items-center gap-8">
-          <span className="font-serif text-xl font-bold text-on-light tracking-tight">
-            Creatorly
-          </span>
           <nav className="hidden md:flex items-center gap-6">
-            <a href="#" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Creators
+            <a href="#" className="text-sm font-sans font-medium text-on-dark/80 hover:text-on-dark transition-colors">
+              Create on Creatorly
             </a>
-            <a href="#" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Pricing
+            <a href="#" className="text-sm font-sans font-medium text-on-dark/80 hover:text-on-dark transition-colors">
+              Explore
             </a>
-            <a href="#" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Resources
-            </a>
-            <a href="#" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Blog
+            <a href="#" className="text-sm font-sans font-medium text-on-dark/80 hover:text-on-dark transition-colors">
+              How it works
             </a>
           </nav>
         </div>
+        <span className="font-serif text-xl font-bold text-on-dark tracking-tight absolute left-1/2 -translate-x-1/2">
+          Creatorly
+        </span>
         <div className="flex items-center gap-3">
-          <Button variant="ghost" size="sm" className="text-sm font-medium">
+          <Button variant="ghost" size="sm" className="text-sm font-sans font-medium text-on-dark/80 hover:text-on-dark hover:bg-transparent">
             Log in
           </Button>
-          <Button size="sm" className="bg-accent-red text-primary-foreground hover:bg-accent-red/90 text-sm font-semibold rounded-full px-6">
-            Get started
+          <Button size="sm" className="bg-on-dark text-on-light hover:bg-on-dark/90 text-sm font-sans font-semibold rounded-full px-6">
+            Start my page
           </Button>
         </div>
       </div>

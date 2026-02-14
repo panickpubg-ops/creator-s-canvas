@@ -1,117 +1,103 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
-import { Users, MessageCircle, Layers, Shield } from "lucide-react";
-import appFeed from "@/assets/app-feed.png";
-import { useState } from "react";
-
-const features = [
-  { icon: Users, title: "Own your audience data", desc: "Full access to your supporter list, emails, and engagement metrics." },
-  { icon: MessageCircle, title: "Direct messaging", desc: "Talk to your fans one-on-one without a platform in between." },
-  { icon: Layers, title: "Flexible pricing tiers", desc: "Create unlimited membership levels with custom perks." },
-  { icon: Shield, title: "No algorithm interference", desc: "Every post reaches every supporter. No throttling, ever." },
-];
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Heart, MessageCircle, Share } from "lucide-react";
+import heroCollage3 from "@/assets/hero-collage-3.jpg";
+import creator1 from "@/assets/creator-1.jpg";
+import creator2 from "@/assets/creator-2.jpg";
+import appMessaging from "@/assets/app-messaging.png";
 
 const CreativeControlSection = () => {
-  const [isYearly, setIsYearly] = useState(false);
-
   return (
-    <section className="bg-cream py-16 md:py-24 lg:py-32 relative overflow-hidden">
+    <section className="bg-cream py-16 md:py-24 lg:py-32 overflow-hidden">
       <div className="container max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* Left content */}
-          <div className="lg:col-span-6 xl:col-span-7">
-            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-on-light leading-[0.95] mb-8">
+        <div className="grid grid-cols-12 gap-6 lg:gap-8 items-center">
+          {/* Left side - scattered social cards */}
+          <div className="col-span-12 lg:col-span-5 relative min-h-[400px] md:min-h-[500px]">
+            {/* Card 1 - top left */}
+            <Card className="absolute top-0 left-0 w-[220px] sm:w-[260px] shadow-lg border-border/30 bg-background z-10">
+              <CardContent className="p-3">
+                <div className="flex items-center gap-2 mb-2">
+                  <Avatar className="h-7 w-7">
+                    <AvatarFallback className="bg-accent-red/20 text-accent-red text-[10px] font-sans font-bold">SC</AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <p className="font-sans text-xs font-semibold text-on-light">Sarah Chen</p>
+                    <p className="font-sans text-[10px] text-muted-foreground">2 hours ago</p>
+                  </div>
+                </div>
+                <p className="font-sans text-xs text-on-light/80 mb-2">Just released my new Music Video. Let me know what you think 🎶</p>
+                <div className="rounded-lg overflow-hidden mb-2">
+                  <img src={heroCollage3} alt="Post" className="w-full h-28 object-cover" />
+                </div>
+                <div className="flex items-center gap-3">
+                  <Heart className="h-3.5 w-3.5 text-muted-foreground" />
+                  <MessageCircle className="h-3.5 w-3.5 text-muted-foreground" />
+                  <Share className="h-3.5 w-3.5 text-muted-foreground" />
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Card 2 - bottom left */}
+            <Card className="absolute bottom-0 left-4 sm:left-8 w-[200px] sm:w-[240px] shadow-lg border-border/30 bg-background z-20">
+              <CardContent className="p-3">
+                <div className="flex items-center gap-2 mb-2">
+                  <Avatar className="h-7 w-7">
+                    <AvatarFallback className="bg-beige text-on-light text-[10px] font-sans font-bold">MR</AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <p className="font-sans text-xs font-semibold text-on-light">Marcus Rivera</p>
+                    <p className="font-sans text-[10px] text-muted-foreground">5 hours ago</p>
+                  </div>
+                </div>
+                <div className="rounded-lg overflow-hidden">
+                  <img src={creator2} alt="Post" className="w-full h-32 object-cover" />
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Phone mockup - right side */}
+            <div className="absolute top-8 right-0 z-30 hidden md:block">
+              <div className="phone-mockup w-[140px]">
+                <div className="phone-mockup-inner">
+                  <img src={appMessaging} alt="App interface" className="w-full" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right side - headline */}
+          <div className="col-span-12 lg:col-span-7 lg:pl-12">
+            <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-on-light leading-[0.9] mb-8">
               Complete
               <br />
               creative
               <br />
-              <span className="italic">control.</span>
+              control
             </h2>
-            <p className="font-sans text-lg text-muted-foreground max-w-md mb-12 leading-relaxed">
-              Stop renting your audience on someone else's platform. Here, you set the terms,
-              you own the relationship, and you keep the creative freedom you deserve.
-            </p>
 
-            {/* Feature cards - staggered grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
-              {features.map((f, i) => (
-                <Card
-                  key={f.title}
-                  className={`border-border/50 bg-beige/50 hover-lift cursor-default ${i === 1 ? 'sm:mt-6' : ''} ${i === 3 ? 'sm:mt-6' : ''}`}
-                >
-                  <CardContent className="p-6">
-                    <f.icon className="h-5 w-5 text-accent-red mb-3" />
-                    <h3 className="font-sans font-semibold text-sm text-on-light mb-1">{f.title}</h3>
-                    <p className="font-sans text-xs text-muted-foreground leading-relaxed">{f.desc}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
-            {/* Pricing toggle */}
-            <div className="flex items-center gap-3 mb-6">
-              <Label htmlFor="billing" className="font-sans text-sm text-muted-foreground">Monthly</Label>
-              <Switch id="billing" checked={isYearly} onCheckedChange={setIsYearly} />
-              <Label htmlFor="billing" className="font-sans text-sm text-muted-foreground">
-                Yearly
-                <Badge className="ml-2 bg-accent-red/10 text-accent-red border-none text-[10px] font-semibold">Save 20%</Badge>
-              </Label>
-            </div>
-
-            {/* Tier tabs */}
-            <Tabs defaultValue="pro" className="max-w-md">
-              <TabsList className="bg-beige/80 border border-border/50 p-1 rounded-full">
-                <TabsTrigger value="starter" className="rounded-full text-xs font-sans">Starter</TabsTrigger>
-                <TabsTrigger value="pro" className="rounded-full text-xs font-sans">Pro</TabsTrigger>
-                <TabsTrigger value="premium" className="rounded-full text-xs font-sans">Premium</TabsTrigger>
-              </TabsList>
-              <TabsContent value="starter" className="mt-4">
-                <Card className="border-border/50 bg-beige/30">
-                  <CardContent className="p-6">
-                    <p className="font-serif text-3xl font-bold text-on-light">{isYearly ? '$3' : '$5'}<span className="text-sm font-sans text-muted-foreground">/mo per supporter</span></p>
-                    <p className="font-sans text-sm text-muted-foreground mt-2">Exclusive posts, early access, community chat.</p>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-              <TabsContent value="pro" className="mt-4">
-                <Card className="border-accent-red/30 bg-accent-red/5">
-                  <CardContent className="p-6">
-                    <Badge className="bg-accent-red text-primary-foreground border-none text-[10px] mb-3">Most popular</Badge>
-                    <p className="font-serif text-3xl font-bold text-on-light">{isYearly ? '$8' : '$10'}<span className="text-sm font-sans text-muted-foreground">/mo per supporter</span></p>
-                    <p className="font-sans text-sm text-muted-foreground mt-2">Everything in Starter + direct messages, downloads, and behind-the-scenes.</p>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-              <TabsContent value="premium" className="mt-4">
-                <Card className="border-border/50 bg-beige/30">
-                  <CardContent className="p-6">
-                    <p className="font-serif text-3xl font-bold text-on-light">{isYearly ? '$20' : '$25'}<span className="text-sm font-sans text-muted-foreground">/mo per supporter</span></p>
-                    <p className="font-sans text-sm text-muted-foreground mt-2">All access + 1-on-1 sessions, custom requests, credits.</p>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-            </Tabs>
-          </div>
-
-          {/* Right phone mockup */}
-          <div className="lg:col-span-6 xl:col-span-5 flex justify-center lg:justify-end relative">
-            <div className="relative">
-              <div className="phone-mockup hover-tilt w-[260px] sm:w-[280px] animate-float">
-                <div className="phone-mockup-inner">
-                  <img src={appFeed} alt="App content feed" className="w-full" loading="lazy" />
-                </div>
+            {/* Right side image */}
+            <div className="grid grid-cols-2 gap-4 mt-8">
+              <div className="rounded-xl overflow-hidden">
+                <img src={creator1} alt="Creator" className="w-full h-48 object-cover" />
               </div>
-              {/* Floating badges */}
-              <Badge className="absolute -top-4 -left-8 bg-accent-red text-primary-foreground border-none shadow-lg animate-badge-pop font-sans text-xs px-3 py-1.5 z-20">
-                📸 New post published!
-              </Badge>
-              <Badge className="absolute bottom-20 -right-6 bg-foreground text-on-dark border-none shadow-lg animate-badge-pop font-sans text-xs px-3 py-1.5 z-20" style={{ animationDelay: '0.3s' }}>
-                ✨ 12 new supporters
-              </Badge>
+              <Card className="border-border/30 bg-background shadow-md">
+                <CardContent className="p-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Avatar className="h-6 w-6">
+                      <AvatarFallback className="bg-accent-red/20 text-accent-red text-[10px] font-sans font-bold">AT</AvatarFallback>
+                    </Avatar>
+                    <p className="font-sans text-xs font-semibold text-on-light">Chronicles of the Mist</p>
+                  </div>
+                  <p className="font-sans text-xs text-muted-foreground leading-relaxed">
+                    Behind-the-scenes of tomorrow's premiere — exclusive for supporters only.
+                  </p>
+                </CardContent>
+              </Card>
             </div>
+
+            <p className="font-sans text-base text-muted-foreground max-w-lg mt-8 leading-relaxed">
+              With Creatorly, you get complete control over everything — your content, your audience, your pricing, and your creative direction. No algorithms. No middlemen.
+            </p>
           </div>
         </div>
       </div>

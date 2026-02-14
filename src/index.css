@@ -126,6 +126,14 @@
     color: hsl(var(--text-dark));
   }
 
+  .bg-on-dark {
+    background-color: hsl(var(--text-light));
+  }
+
+  .border-on-dark {
+    border-color: hsl(var(--text-light));
+  }
+
   .text-accent-red {
     color: hsl(var(--accent-red));
   }
