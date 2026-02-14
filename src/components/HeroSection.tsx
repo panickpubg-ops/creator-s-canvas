@@ -26,34 +26,18 @@ const HeroSection = () => {
       {/* Image collage grid */}
       <div className="absolute inset-0 grid grid-cols-3 gap-1 opacity-70">
         <div className="relative overflow-hidden">
-          <img
-            src={heroCollage1}
-            alt="Creator podcasting"
-            className="w-full h-full object-cover grayscale"
-            loading="eager"
-          />
+          <img src={heroCollage1} alt="Creator podcasting" className="w-full h-full object-cover grayscale" loading="eager" />
         </div>
         <div className="relative overflow-hidden flex flex-col gap-1">
           <div className="flex-1 overflow-hidden">
-            <img
-              src={heroCollage2}
-              alt="Artist creator"
-              className="w-full h-full object-cover grayscale"
-              loading="eager"
-            />
+            <img src={heroCollage2} alt="Artist creator" className="w-full h-full object-cover grayscale" loading="eager" />
           </div>
         </div>
         <div className="relative overflow-hidden">
-          <img
-            src={heroCollage3}
-            alt="Musician creator"
-            className="w-full h-full object-cover"
-            loading="eager"
-          />
-          {/* Overlay text snippets like Patreon */}
+          <img src={heroCollage3} alt="Musician creator" className="w-full h-full object-cover" loading="eager" />
           <div className="absolute inset-0 flex items-start justify-end p-6">
             <div className="text-right">
-              <p className="font-sans text-xs text-on-dark/60 max-w-[200px] leading-relaxed">
+              <p className="font-sans text-xs text-primary-foreground/60 max-w-[200px] leading-relaxed">
                 Join the creators who are building something real, on their own terms.
               </p>
             </div>
@@ -65,19 +49,17 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-dark/30" />
 
       {/* Bottom content */}
-      <div className="relative z-10 min-h-screen flex flex-col justify-end pb-16 md:pb-24">
+      <div className="relative z-10 min-h-screen flex flex-col justify-end pb-20 md:pb-28">
         <div className="container max-w-7xl mx-auto px-6">
           <div className="flex items-end justify-between">
             <div>
-              <ChevronDown className="h-8 w-8 text-on-dark/60 mb-4 animate-bounce" />
-              <h1 className="font-serif text-6xl sm:text-7xl md:text-8xl lg:text-[120px] font-bold text-on-dark leading-[0.9]">
+              <ChevronDown className="h-8 w-8 text-primary-foreground/60 mb-4 animate-bounce" />
+              <h1 className="font-serif text-6xl sm:text-7xl md:text-8xl lg:text-[120px] font-bold text-primary-foreground leading-[0.9]">
                 Where
                 <br />
                 <span
                   className={`inline-block transition-all duration-400 ${
-                    isAnimating
-                      ? "opacity-0 -translate-y-4"
-                      : "opacity-100 translate-y-0"
+                    isAnimating ? "opacity-0 -translate-y-4" : "opacity-100 translate-y-0"
                   }`}
                 >
                   {rotatingWords[wordIndex]}
