@@ -6,6 +6,7 @@ import CreativeControlSection from "@/components/CreativeControlSection";
 import CreatorsFansSection from "@/components/CreatorsFansSection";
 import PassionsBusinessSection from "@/components/PassionsBusinessSection";
 import YourWorldSection from "@/components/YourWorldSection";
+import SignUpSection from "@/components/SignUpSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -20,6 +21,7 @@ const Index = () => {
         <CreatorsFansSection />
         <PassionsBusinessSection />
         <YourWorldSection />
+        <SignUpSection />
       </main>
       <Footer />
     </div>
