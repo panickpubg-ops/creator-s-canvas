@@ -25,8 +25,41 @@ const HeroSection = () => {
 
   return (
     <section ref={parallaxRef} className="relative bg-dark min-h-screen overflow-hidden">
-      {/* Image collage grid with parallax */}
-      <div className="absolute inset-0 grid grid-cols-2 sm:grid-cols-3 gap-1 opacity-70">
+      {/* ===== MOBILE: Dramatic overlapping mosaic ===== */}
+      <div className="absolute inset-0 sm:hidden">
+        {/* Main background image — full bleed, slight zoom */}
+        <div className="absolute inset-0 overflow-hidden">
+          <img
+            src={heroCollage1}
+            alt="Creator podcasting"
+            className="w-full h-full object-cover grayscale scale-110"
+            loading="eager"
+          />
+        </div>
+        {/* Floating overlapping polaroid-style cards */}
+        <div className="absolute top-[12%] right-[-8%] w-[55%] aspect-[3/4] rounded-xl overflow-hidden shadow-2xl rotate-6 border-[3px] border-primary-foreground/10 z-10">
+          <img
+            src={heroCollage2}
+            alt="Artist creator"
+            className="w-full h-full object-cover"
+            loading="eager"
+          />
+        </div>
+        <div className="absolute top-[6%] left-[-5%] w-[40%] aspect-square rounded-xl overflow-hidden shadow-2xl -rotate-12 border-[3px] border-primary-foreground/10 z-10">
+          <img
+            src={heroCollage3}
+            alt="Musician creator"
+            className="w-full h-full object-cover"
+            loading="eager"
+          />
+        </div>
+        {/* Heavy cinematic gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/70 to-dark/20 z-20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-dark/40 to-transparent z-20" />
+      </div>
+
+      {/* ===== DESKTOP: Original parallax collage grid ===== */}
+      <div className="absolute inset-0 hidden sm:grid grid-cols-3 gap-1 opacity-70">
         <div className="relative overflow-hidden">
           <img
             src={heroCollage1}
@@ -47,7 +80,7 @@ const HeroSection = () => {
             />
           </div>
         </div>
-        <div className="relative overflow-hidden hidden sm:block">
+        <div className="relative overflow-hidden">
           <img
             src={heroCollage3}
             alt="Musician creator"
@@ -65,27 +98,35 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Dark gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-dark/30" />
+      {/* Desktop gradient */}
+      <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-dark/30 hidden sm:block" />
 
       {/* Bottom content */}
-      <div className="relative z-10 min-h-screen flex flex-col justify-end pb-16 sm:pb-20 md:pb-28">
+      <div className="relative z-30 min-h-screen flex flex-col justify-end pb-10 sm:pb-20 md:pb-28">
         <div className="container max-w-7xl mx-auto px-5 sm:px-6">
-          <div>
-            <ChevronDown className="h-6 w-6 sm:h-8 sm:w-8 text-primary-foreground/60 mb-3 sm:mb-4 animate-bounce" />
-            <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[120px] font-bold text-primary-foreground leading-[0.9]">
-              Where
-              <br />
-              <span
-                className={`inline-block transition-all duration-400 ${
-                  isAnimating ? "opacity-0 -translate-y-4" : "opacity-100 translate-y-0"
-                }`}
-              >
-                {rotatingWords[wordIndex]}
-              </span>{" "}
-              <span className="italic">grow</span>
-            </h1>
+          {/* Mobile: tagline badge above headline */}
+          <div className="sm:hidden mb-4">
+            <span className="inline-block font-sans text-[10px] uppercase tracking-[0.2em] text-primary-foreground/50 border border-primary-foreground/15 rounded-full px-3 py-1.5 backdrop-blur-sm bg-primary-foreground/5">
+              For creators, by creators
+            </span>
           </div>
+          <ChevronDown className="h-6 w-6 sm:h-8 sm:w-8 text-primary-foreground/60 mb-3 sm:mb-4 animate-bounce hidden sm:block" />
+          <h1 className="font-serif text-[13vw] sm:text-6xl md:text-7xl lg:text-8xl xl:text-[120px] font-bold text-primary-foreground leading-[0.85] sm:leading-[0.9]">
+            Where
+            <br />
+            <span
+              className={`inline-block transition-all duration-400 text-primary ${
+                isAnimating ? "opacity-0 -translate-y-4" : "opacity-100 translate-y-0"
+              }`}
+            >
+              {rotatingWords[wordIndex]}
+            </span>{" "}
+            <span className="italic font-light">grow</span>
+          </h1>
+          {/* Mobile-only subtitle */}
+          <p className="sm:hidden font-sans text-sm text-primary-foreground/50 mt-5 max-w-[260px] leading-relaxed">
+            The platform where creators own their audience, their content, and their revenue.
+          </p>
         </div>
       </div>
     </section>
