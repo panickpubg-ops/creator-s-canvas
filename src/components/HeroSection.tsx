@@ -26,7 +26,7 @@ const HeroSection = () => {
   return (
     <section ref={parallaxRef} className="relative bg-dark min-h-screen overflow-hidden">
       {/* Image collage grid with parallax */}
-      <div className="absolute inset-0 grid grid-cols-3 gap-1 opacity-70">
+      <div className="absolute inset-0 grid grid-cols-2 sm:grid-cols-3 gap-1 opacity-70">
         <div className="relative overflow-hidden">
           <img
             src={heroCollage1}
@@ -47,7 +47,7 @@ const HeroSection = () => {
             />
           </div>
         </div>
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden hidden sm:block">
           <img
             src={heroCollage3}
             alt="Musician creator"
@@ -69,24 +69,22 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-dark/30" />
 
       {/* Bottom content */}
-      <div className="relative z-10 min-h-screen flex flex-col justify-end pb-20 md:pb-28">
-        <div className="container max-w-7xl mx-auto px-6">
-          <div className="flex items-end justify-between">
-            <div>
-              <ChevronDown className="h-8 w-8 text-primary-foreground/60 mb-4 animate-bounce" />
-              <h1 className="font-serif text-6xl sm:text-7xl md:text-8xl lg:text-[120px] font-bold text-primary-foreground leading-[0.9]">
-                Where
-                <br />
-                <span
-                  className={`inline-block transition-all duration-400 ${
-                    isAnimating ? "opacity-0 -translate-y-4" : "opacity-100 translate-y-0"
-                  }`}
-                >
-                  {rotatingWords[wordIndex]}
-                </span>{" "}
-                <span className="italic">grow</span>
-              </h1>
-            </div>
+      <div className="relative z-10 min-h-screen flex flex-col justify-end pb-16 sm:pb-20 md:pb-28">
+        <div className="container max-w-7xl mx-auto px-5 sm:px-6">
+          <div>
+            <ChevronDown className="h-6 w-6 sm:h-8 sm:w-8 text-primary-foreground/60 mb-3 sm:mb-4 animate-bounce" />
+            <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[120px] font-bold text-primary-foreground leading-[0.9]">
+              Where
+              <br />
+              <span
+                className={`inline-block transition-all duration-400 ${
+                  isAnimating ? "opacity-0 -translate-y-4" : "opacity-100 translate-y-0"
+                }`}
+              >
+                {rotatingWords[wordIndex]}
+              </span>{" "}
+              <span className="italic">grow</span>
+            </h1>
           </div>
         </div>
       </div>
