@@ -22,65 +22,108 @@ const CreativeControlSection = () => {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         )}
       >
-        <div className="grid grid-cols-12 gap-8 lg:gap-12 items-center">
-          {/* Left side - scattered social cards */}
-          <div className="col-span-12 lg:col-span-5 relative min-h-[400px] md:min-h-[500px]">
-            {/* Card 1 */}
-            <Card className="absolute top-0 left-0 w-[220px] sm:w-[260px] shadow-lg border-border/30 bg-background z-10 hover-lift">
-              <CardContent className="p-3">
-                <div className="flex items-center gap-2 mb-2">
-                  <Avatar className="h-7 w-7">
-                    <AvatarFallback className="bg-accent-red/20 text-accent-red text-[10px] font-sans font-bold">SC</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <p className="font-sans text-xs font-semibold text-foreground">Sarah Chen</p>
-                    <p className="font-sans text-[10px] text-muted-foreground">2 hours ago</p>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          {/* Left side - social cards */}
+          <div className="col-span-1 lg:col-span-5">
+            {/* Mobile: stacked layout, Desktop: scattered absolute */}
+            <div className="flex flex-col gap-4 sm:hidden">
+              <Card className="shadow-lg border-border/30 bg-background hover-lift">
+                <CardContent className="p-3">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Avatar className="h-7 w-7">
+                      <AvatarFallback className="bg-accent-red/20 text-accent-red text-[10px] font-sans font-bold">SC</AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <p className="font-sans text-xs font-semibold text-foreground">Sarah Chen</p>
+                      <p className="font-sans text-[10px] text-muted-foreground">2 hours ago</p>
+                    </div>
                   </div>
-                </div>
-                <p className="font-sans text-xs text-foreground/80 mb-2">Just released my new Music Video. Let me know what you think 🎶</p>
-                <div className="rounded-lg overflow-hidden mb-2">
-                  <img src={heroCollage3} alt="Post" className="w-full h-28 object-cover" />
-                </div>
-                <div className="flex items-center gap-3">
-                  <Heart className="h-3.5 w-3.5 text-muted-foreground" />
-                  <MessageCircle className="h-3.5 w-3.5 text-muted-foreground" />
-                  <Share className="h-3.5 w-3.5 text-muted-foreground" />
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Card 2 */}
-            <Card className="absolute bottom-0 left-4 sm:left-8 w-[200px] sm:w-[240px] shadow-lg border-border/30 bg-background z-20 hover-lift">
-              <CardContent className="p-3">
-                <div className="flex items-center gap-2 mb-2">
-                  <Avatar className="h-7 w-7">
-                    <AvatarFallback className="bg-beige text-foreground text-[10px] font-sans font-bold">MR</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <p className="font-sans text-xs font-semibold text-foreground">Marcus Rivera</p>
-                    <p className="font-sans text-[10px] text-muted-foreground">5 hours ago</p>
+                  <p className="font-sans text-xs text-foreground/80 mb-2">Just released my new Music Video. Let me know what you think 🎶</p>
+                  <div className="rounded-lg overflow-hidden mb-2">
+                    <img src={heroCollage3} alt="Post" className="w-full h-40 object-cover" />
                   </div>
-                </div>
-                <div className="rounded-lg overflow-hidden">
-                  <img src={creator2} alt="Post" className="w-full h-32 object-cover" />
-                </div>
-              </CardContent>
-            </Card>
+                  <div className="flex items-center gap-3">
+                    <Heart className="h-3.5 w-3.5 text-muted-foreground" />
+                    <MessageCircle className="h-3.5 w-3.5 text-muted-foreground" />
+                    <Share className="h-3.5 w-3.5 text-muted-foreground" />
+                  </div>
+                </CardContent>
+              </Card>
 
-            {/* Animated phone mockup */}
-            <div className="absolute top-8 right-0 z-30 hidden md:block">
-              <AnimatedPhoneMockup
-                images={[appMessaging, appFeed]}
-                alt="App messaging"
-                className="w-[140px]"
-                badge="3 new messages"
-              />
+              <Card className="shadow-lg border-border/30 bg-background hover-lift">
+                <CardContent className="p-3">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Avatar className="h-7 w-7">
+                      <AvatarFallback className="bg-beige text-foreground text-[10px] font-sans font-bold">MR</AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <p className="font-sans text-xs font-semibold text-foreground">Marcus Rivera</p>
+                      <p className="font-sans text-[10px] text-muted-foreground">5 hours ago</p>
+                    </div>
+                  </div>
+                  <div className="rounded-lg overflow-hidden">
+                    <img src={creator2} alt="Post" className="w-full h-40 object-cover" />
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Desktop: absolute scattered layout */}
+            <div className="hidden sm:block relative min-h-[400px] md:min-h-[500px]">
+              <Card className="absolute top-0 left-0 w-[220px] sm:w-[260px] shadow-lg border-border/30 bg-background z-10 hover-lift">
+                <CardContent className="p-3">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Avatar className="h-7 w-7">
+                      <AvatarFallback className="bg-accent-red/20 text-accent-red text-[10px] font-sans font-bold">SC</AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <p className="font-sans text-xs font-semibold text-foreground">Sarah Chen</p>
+                      <p className="font-sans text-[10px] text-muted-foreground">2 hours ago</p>
+                    </div>
+                  </div>
+                  <p className="font-sans text-xs text-foreground/80 mb-2">Just released my new Music Video. Let me know what you think 🎶</p>
+                  <div className="rounded-lg overflow-hidden mb-2">
+                    <img src={heroCollage3} alt="Post" className="w-full h-28 object-cover" />
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Heart className="h-3.5 w-3.5 text-muted-foreground" />
+                    <MessageCircle className="h-3.5 w-3.5 text-muted-foreground" />
+                    <Share className="h-3.5 w-3.5 text-muted-foreground" />
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="absolute bottom-0 left-4 sm:left-8 w-[200px] sm:w-[240px] shadow-lg border-border/30 bg-background z-20 hover-lift">
+                <CardContent className="p-3">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Avatar className="h-7 w-7">
+                      <AvatarFallback className="bg-beige text-foreground text-[10px] font-sans font-bold">MR</AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <p className="font-sans text-xs font-semibold text-foreground">Marcus Rivera</p>
+                      <p className="font-sans text-[10px] text-muted-foreground">5 hours ago</p>
+                    </div>
+                  </div>
+                  <div className="rounded-lg overflow-hidden">
+                    <img src={creator2} alt="Post" className="w-full h-32 object-cover" />
+                  </div>
+                </CardContent>
+              </Card>
+
+              <div className="absolute top-8 right-0 z-30 hidden md:block">
+                <AnimatedPhoneMockup
+                  images={[appMessaging, appFeed]}
+                  alt="App messaging"
+                  className="w-[140px]"
+                  badge="3 new messages"
+                />
+              </div>
             </div>
           </div>
 
           {/* Right side */}
-          <div className="col-span-12 lg:col-span-7 lg:pl-12">
-            <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-foreground leading-[0.9] mb-10">
+          <div className="col-span-1 lg:col-span-7 lg:pl-12">
+            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-foreground leading-[0.9] mb-8 sm:mb-10">
               Complete
               <br />
               creative
@@ -88,12 +131,12 @@ const CreativeControlSection = () => {
               control
             </h2>
 
-            <div className="grid grid-cols-2 gap-6 mt-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mt-8 sm:mt-10">
               <div className="rounded-xl overflow-hidden">
                 <img src={creator1} alt="Creator" className="w-full h-48 object-cover" />
               </div>
               <Card className="border-border/30 bg-background shadow-md hover-lift">
-                <CardContent className="p-5">
+                <CardContent className="p-4 sm:p-5">
                   <div className="flex items-center gap-2 mb-3">
                     <Avatar className="h-6 w-6">
                       <AvatarFallback className="bg-accent-red/20 text-accent-red text-[10px] font-sans font-bold">AT</AvatarFallback>
@@ -107,7 +150,7 @@ const CreativeControlSection = () => {
               </Card>
             </div>
 
-            <p className="font-sans text-base text-muted-foreground max-w-lg mt-10 leading-relaxed">
+            <p className="font-sans text-sm sm:text-base text-muted-foreground max-w-lg mt-8 sm:mt-10 leading-relaxed">
               With Bakking, you get complete control over everything — your content, your audience, your pricing, and your creative direction. No algorithms. No middlemen.
             </p>
           </div>
