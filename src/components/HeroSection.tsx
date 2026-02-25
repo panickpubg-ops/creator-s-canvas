@@ -4,13 +4,20 @@ import heroCollage1 from "@/assets/hero-collage-1.jpg";
 import heroCollage2 from "@/assets/hero-collage-2.jpg";
 import heroCollage3 from "@/assets/hero-collage-3.jpg";
 import { useParallax } from "@/hooks/useParallax";
+import { cn } from "@/lib/utils";
 
 const rotatingWords = ["podcasts", "creativity", "music", "art", "writing"];
 
 const HeroSection = () => {
   const [wordIndex, setWordIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [heroLoaded, setHeroLoaded] = useState(false);
   const { ref: parallaxRef, offset } = useParallax(0.4);
+
+  useEffect(() => {
+    const t = setTimeout(() => setHeroLoaded(true), 300);
+    return () => clearTimeout(t);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -37,7 +44,10 @@ const HeroSection = () => {
           />
         </div>
         {/* Floating overlapping polaroid-style cards */}
-        <div className="absolute top-[12%] right-[-8%] w-[55%] aspect-[3/4] rounded-xl overflow-hidden shadow-2xl rotate-6 border-[3px] border-primary-foreground/10 z-10">
+        <div className={cn(
+          "absolute top-[12%] right-[-8%] w-[55%] aspect-[3/4] rounded-xl overflow-hidden shadow-2xl rotate-6 border-[3px] border-primary-foreground/10 z-10 transition-all duration-700 ease-out",
+          heroLoaded ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-75 translate-y-8"
+        )} style={{ transitionDelay: "200ms" }}>
           <img
             src={heroCollage2}
             alt="Artist creator"
@@ -45,7 +55,10 @@ const HeroSection = () => {
             loading="eager"
           />
         </div>
-        <div className="absolute top-[6%] left-[-5%] w-[40%] aspect-square rounded-xl overflow-hidden shadow-2xl -rotate-12 border-[3px] border-primary-foreground/10 z-10">
+        <div className={cn(
+          "absolute top-[6%] left-[-5%] w-[40%] aspect-square rounded-xl overflow-hidden shadow-2xl -rotate-12 border-[3px] border-primary-foreground/10 z-10 transition-all duration-700 ease-out",
+          heroLoaded ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-75 translate-y-8"
+        )} style={{ transitionDelay: "500ms" }}>
           <img
             src={heroCollage3}
             alt="Musician creator"
@@ -105,13 +118,16 @@ const HeroSection = () => {
       <div className="relative z-30 min-h-screen flex flex-col justify-end pb-10 sm:pb-20 md:pb-28">
         <div className="container max-w-7xl mx-auto px-5 sm:px-6">
           {/* Mobile: tagline badge above headline */}
-          <div className="sm:hidden mb-4">
+          <div className={cn("sm:hidden mb-4 transition-all duration-700 ease-out", heroLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4")} style={{ transitionDelay: "700ms" }}>
             <span className="inline-block font-sans text-[10px] uppercase tracking-[0.2em] text-primary-foreground/50 border border-primary-foreground/15 rounded-full px-3 py-1.5 backdrop-blur-sm bg-primary-foreground/5">
               For creators, by creators
             </span>
           </div>
           <ChevronDown className="h-6 w-6 sm:h-8 sm:w-8 text-primary-foreground/60 mb-3 sm:mb-4 animate-bounce hidden sm:block" />
-          <h1 className="font-serif text-[13vw] sm:text-6xl md:text-7xl lg:text-8xl xl:text-[120px] font-bold text-primary-foreground leading-[0.85] sm:leading-[0.9]">
+          <h1 className={cn(
+            "font-serif text-[13vw] sm:text-6xl md:text-7xl lg:text-8xl xl:text-[120px] font-bold text-primary-foreground leading-[0.85] sm:leading-[0.9] transition-all duration-700 ease-out",
+            heroLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          )} style={{ transitionDelay: "900ms" }}>
             Where
             <br />
             <span
@@ -124,7 +140,7 @@ const HeroSection = () => {
             <span className="italic font-light">grow</span>
           </h1>
           {/* Mobile-only subtitle */}
-          <p className="sm:hidden font-sans text-sm text-primary-foreground/50 mt-5 max-w-[260px] leading-relaxed">
+          <p className={cn("sm:hidden font-sans text-sm text-primary-foreground/50 mt-5 max-w-[260px] leading-relaxed transition-all duration-700 ease-out", heroLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4")} style={{ transitionDelay: "1100ms" }}>
             The platform where creators own their audience, their content, and their revenue.
           </p>
         </div>
