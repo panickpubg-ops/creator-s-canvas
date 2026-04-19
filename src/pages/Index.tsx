@@ -1,5 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import ZeroFeesSection from "@/components/ZeroFeesSection";
+import CharitiesShowcaseSection from "@/components/CharitiesShowcaseSection";
 import CreativityFandomSection from "@/components/CreativityFandomSection";
 import TestimonialSection from "@/components/TestimonialSection";
 import CreativeControlSection from "@/components/CreativeControlSection";
@@ -16,6 +18,10 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
+        <div id="why-bakking">
+          <ZeroFeesSection />
+        </div>
+        <CharitiesShowcaseSection />
         <CreativityFandomSection />
         <TestimonialSection />
         <CreativeControlSection />
