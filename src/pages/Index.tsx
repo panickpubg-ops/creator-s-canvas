@@ -18,10 +18,6 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <div id="why-bakking">
-          <ZeroFeesSection />
-        </div>
-        <CharitiesShowcaseSection />
         <CreativityFandomSection />
         <TestimonialSection />
         <CreativeControlSection />
@@ -29,6 +25,10 @@ const Index = () => {
         <PassionsBusinessSection />
         <BentoShowcase />
         <YourWorldSection />
+        <div id="why-bakking">
+          <ZeroFeesSection />
+        </div>
+        <CharitiesShowcaseSection />
         <SignUpSection />
       </main>
       <Footer />

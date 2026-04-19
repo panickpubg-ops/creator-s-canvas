@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 const stats = [
   { value: "100%", label: "of your donation goes to charity" },
-  { value: "0%", label: "platform fees, ever" },
+  { value: "0%", label: "fees on charity donations" },
   { value: "12+", label: "vetted UK charity partners" },
   { value: "+25%", label: "free with UK Gift Aid" },
 ];
@@ -52,17 +52,17 @@ const ZeroFeesSection = () => {
           <div className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur border border-primary-foreground/15 text-primary-foreground/90 rounded-full px-3 py-1.5 mb-6">
             <Sparkles className="h-3.5 w-3.5 text-primary" />
             <span className="font-sans text-[11px] uppercase tracking-[0.16em] font-semibold">
-              Why Bakking
+              Our promise to charities
             </span>
           </div>
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-[0.95] mb-6">
-            We take{" "}
+            For charities, we take{" "}
             <span className="italic text-primary">nothing.</span>
             <br />
             They get <span className="italic">everything.</span>
           </h2>
           <p className="font-sans text-base md:text-lg text-primary-foreground/65 leading-relaxed max-w-2xl">
-            Most donation platforms quietly take 5–10% in fees. Bakking takes 0%. Your full donation — plus an extra 25% from UK Gift Aid — goes directly to the charity you chose.
+            Most donation platforms quietly take 5–10% in fees. On charity donations, Bakking takes 0%. Your full gift — plus an extra 25% from UK Gift Aid — goes directly to the charity you chose. <span className="text-primary-foreground/80">(Standard platform fees apply to creator memberships.)</span>
           </p>
         </div>
 
