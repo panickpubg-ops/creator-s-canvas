@@ -28,7 +28,7 @@ const AudienceSplitSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
           {/* Creator card */}
           <Link
-            to="#"
+            to="/create"
             className="group relative bg-background rounded-2xl border border-border hover:border-primary/40 p-6 md:p-8 transition-all duration-500 hover-lift overflow-hidden"
           >
             <div className="absolute -top-12 -right-12 h-40 w-40 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-colors duration-500" />
@@ -62,7 +62,7 @@ const AudienceSplitSection = () => {
                       </TooltipTrigger>
                       <TooltipContent side="top" className="max-w-[240px] text-xs leading-relaxed">
                         Bakking takes a small percentage of paid memberships to keep the platform running. See full details on our{" "}
-                        <Link to="#" className="underline font-semibold">pricing page</Link>.
+                        <Link to="/pricing" className="underline font-semibold">pricing page</Link>.
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
