@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import AudienceSplitSection from "@/components/AudienceSplitSection";
 import ZeroFeesSection from "@/components/ZeroFeesSection";
 import CharitiesShowcaseSection from "@/components/CharitiesShowcaseSection";
+import CharitiesIntroDivider from "@/components/CharitiesIntroDivider";
 import CreativityFandomSection from "@/components/CreativityFandomSection";
 import TestimonialSection from "@/components/TestimonialSection";
 import CreativeControlSection from "@/components/CreativeControlSection";
@@ -28,6 +29,7 @@ const Index = () => {
         <BentoShowcase />
         <YourWorldSection />
         <div id="why-bakking">
+          <CharitiesIntroDivider />
           <ZeroFeesSection />
         </div>
         <CharitiesShowcaseSection />
