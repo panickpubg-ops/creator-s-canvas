@@ -228,13 +228,18 @@ const Checkout = () => {
                   <div>
                     <p className="font-sans text-sm font-semibold text-foreground">{charity.label}</p>
                     <p className="font-sans text-[10px] text-muted-foreground">
-                      {giftAid ? `£${amount.toFixed(2)} + £${giftAidAmount.toFixed(2)} Gift Aid` : "One-off donation"}
+                      {giftAid
+                        ? `You pay £${amount.toFixed(2)} · Charity receives £${totalWithGiftAid.toFixed(2)} with Gift Aid`
+                        : "One-off donation"}
                     </p>
                   </div>
                 </div>
-                <span className="font-serif text-xl sm:text-2xl font-bold text-primary">
-                  £{(giftAid ? totalWithGiftAid : amount).toFixed(2)}
-                </span>
+                <div className="text-right">
+                  <span className="font-serif text-xl sm:text-2xl font-bold text-primary block leading-none">
+                    £{amount.toFixed(2)}
+                  </span>
+                  <span className="font-sans text-[10px] text-muted-foreground">You pay today</span>
+                </div>
               </div>
 
               {/* Personal details */}
@@ -351,7 +356,7 @@ const Checkout = () => {
                     className="rounded-full bg-primary text-primary-foreground font-sans font-semibold px-6 sm:px-8 gap-2 shadow-lg shadow-primary/25 disabled:opacity-50"
                   >
                     <Heart className="h-4 w-4" />
-                    Complete Donation — £{(giftAid ? totalWithGiftAid : amount).toFixed(2)}
+                    Donate £{amount.toFixed(2)}
                   </Button>
                 </motion.div>
               </div>
