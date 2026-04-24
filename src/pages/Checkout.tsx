@@ -324,6 +324,16 @@ const Checkout = () => {
                   <Shield className="h-3 w-3" />
                   <span>Your payment details are encrypted and secure</span>
                 </div>
+
+                {/* Stripe fee notice */}
+                <div className="mt-4 rounded-lg bg-secondary/40 border border-border p-3 flex items-start gap-2">
+                  <CreditCard className="h-3.5 w-3.5 text-muted-foreground mt-0.5 flex-shrink-0" />
+                  <p className="font-sans text-[11px] text-muted-foreground leading-relaxed">
+                    <span className="font-semibold text-foreground">Bakking takes 0% on charity donations.</span>{" "}
+                    A small payment processing fee is charged by Stripe (typically 1.5% + 20p for UK cards) to securely process your card —
+                    this goes to Stripe, not to Bakking.
+                  </p>
+                </div>
               </div>
 
               {/* Navigation */}

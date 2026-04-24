@@ -118,8 +118,8 @@ const HeroSection = () => {
           <ChevronDown className="h-6 w-6 sm:h-8 sm:w-8 text-primary-foreground/60 mb-3 sm:mb-4 animate-bounce hidden sm:block" />
 
           <h1 className={cn(
-            "font-serif font-bold text-primary-foreground leading-[0.9] transition-all duration-700 ease-out",
-            "text-[clamp(2.75rem,11vw,8.5rem)]",
+            "font-serif font-bold text-primary-foreground leading-[0.95] transition-all duration-700 ease-out",
+            "text-[clamp(2rem,7vw,5.5rem)]",
             heroLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           )} style={{ transitionDelay: "900ms" }}>
             Where{" "}
