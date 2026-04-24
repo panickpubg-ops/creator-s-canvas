@@ -30,7 +30,9 @@ const Index = () => {
         <YourWorldSection />
         <div id="why-bakking">
           <CharitiesIntroDivider />
-          <ZeroFeesSection />
+          <div id="charity-features">
+            <ZeroFeesSection />
+          </div>
         </div>
         <CharitiesShowcaseSection />
         <SignUpSection />
