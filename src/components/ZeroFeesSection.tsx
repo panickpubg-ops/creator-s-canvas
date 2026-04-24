@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
+import AnimatedPhoneMockup from "@/components/AnimatedPhoneMockup";
+import appDonate from "@/assets/app-donate.png";
+import appDonationConfirmed from "@/assets/app-donation-confirmed.png";
 
 const stats = [
   { value: "100%", label: "of your donation goes to charity" },
@@ -47,23 +50,44 @@ const ZeroFeesSection = () => {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         )}
       >
-        {/* Top: hook headline */}
-        <div className="max-w-3xl mb-14 md:mb-20">
-          <div className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur border border-primary-foreground/15 text-primary-foreground/90 rounded-full px-3 py-1.5 mb-6">
-            <Sparkles className="h-3.5 w-3.5 text-primary" />
-            <span className="font-sans text-[11px] uppercase tracking-[0.16em] font-semibold">
-              Our promise to charities
-            </span>
+        {/* Top: hook headline + phone mockup */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center mb-14 md:mb-20">
+          <div className="lg:col-span-7 max-w-3xl">
+            <div className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur border border-primary-foreground/15 text-primary-foreground/90 rounded-full px-3 py-1.5 mb-6">
+              <Sparkles className="h-3.5 w-3.5 text-primary" />
+              <span className="font-sans text-[11px] uppercase tracking-[0.16em] font-semibold">
+                Our promise to charities
+              </span>
+            </div>
+            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-[0.95] mb-6">
+              For charities, we take{" "}
+              <span className="italic text-primary">nothing.</span>
+              <br />
+              They get <span className="italic">everything.</span>
+            </h2>
+            <p className="font-sans text-base md:text-lg text-primary-foreground/65 leading-relaxed max-w-2xl">
+              Most donation platforms quietly take 5–10% in fees. On charity donations, Bakking takes 0%. Your full gift — plus an extra 25% from UK Gift Aid — goes directly to the charity you chose. <span className="text-primary-foreground/80">(Standard platform fees apply to creator memberships.)</span>
+            </p>
           </div>
-          <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-[0.95] mb-6">
-            For charities, we take{" "}
-            <span className="italic text-primary">nothing.</span>
-            <br />
-            They get <span className="italic">everything.</span>
-          </h2>
-          <p className="font-sans text-base md:text-lg text-primary-foreground/65 leading-relaxed max-w-2xl">
-            Most donation platforms quietly take 5–10% in fees. On charity donations, Bakking takes 0%. Your full gift — plus an extra 25% from UK Gift Aid — goes directly to the charity you chose. <span className="text-primary-foreground/80">(Standard platform fees apply to creator memberships.)</span>
-          </p>
+
+          {/* Phone mockup card */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <div className="relative max-w-[280px] sm:max-w-[320px] w-full">
+              {/* Soft glow behind phone */}
+              <div className="absolute -inset-6 bg-primary/20 blur-3xl rounded-full pointer-events-none" />
+              <div className="relative bg-primary-foreground/[0.04] backdrop-blur border border-primary-foreground/10 rounded-[2.5rem] p-3 md:p-4 shadow-2xl">
+                <AnimatedPhoneMockup
+                  images={[appDonate, appDonationConfirmed]}
+                  alt="Sending a charity donation and receiving confirmation in the Bakking app"
+                  badge="Live demo"
+                  interval={3500}
+                />
+              </div>
+              <p className="mt-4 text-center font-sans text-[11px] uppercase tracking-[0.18em] text-primary-foreground/55">
+                Donate → Confirmed in seconds
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Stats strip */}
